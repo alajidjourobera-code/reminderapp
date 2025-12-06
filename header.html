@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Reminder App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>📚 Student Reminder App</h1>
+    </header>
+
+    <main>
+        <section class="input-section">
+            <h2>Add New Reminder</h2>
+            <input type="text" id="reminderInput" placeholder="Enter your reminder">
+            <input type="date" id="reminderDate">
+            <select id="reminderPriority">
+                <option value="Low">Low Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="High">High Priority</option>
+            </select>
+            <select id="reminderCategory">
+                <option value="Homework">Homework</option>
+                <option value="Exam">Exam</option>
+                <option value="Project">Project</option>
+                <option value="Personal">Personal</option>
+            </select>
+            <button onclick="addReminder()">Add Reminder</button>
+        </section>
+
+        <section class="reminder-section">
+            <h2>My Reminders</h2>
+            <ul id="reminderList"></ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Student Reminder App &copy; 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
