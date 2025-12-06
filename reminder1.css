@@ -1,0 +1,132 @@
+/* GENERAL STYLING */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #d9e4f5, #f2f2f2);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+main {
+    width: 100%;
+    max-width: 500px;
+    margin-top: 30px;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    color: #2e3b7a;
+}
+
+/* INPUT SECTION */
+.input-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-bottom: 25px;
+}
+
+.input-section h2 {
+    margin-bottom: 15px;
+    color: #2e3b7a;
+}
+
+.input-section input, .input-section select {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.input-section button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.input-section button:hover {
+    background-color: #45a049;
+}
+
+/* REMINDERS SECTION */
+.reminder-section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.reminder-section h2 {
+    margin-bottom: 15px;
+    color: #2e3b7a;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    background-color: #f0f0f0;
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.reminder-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reminder-info span {
+    padding: 4px 8px;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.85em;
+}
+
+.Low { background-color: green; }
+.Medium { background-color: orange; }
+.High { background-color: red; }
+
+li button {
+    margin-top: 8px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+
+.edit-btn { background-color: #007bff; color: white; }
+.edit-btn:hover { background-color: #0056b3; }
+
+.remove-btn { background-color: #ff4d4d; color: white; }
+.remove-btn:hover { background-color: #ff1a1a; }
+
+/* FOOTER */
+footer {
+    text-align: center;
+    margin: 20px 0;
+    color: #555;
+    font-size: 0.9em;
+}
