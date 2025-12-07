@@ -3,41 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Reminder App</title>
+    <title>CampusPulse - Reminder App</title>
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>📚 Student Reminder App</h1>
+
+    <header id="navbar">
+        <div class="container nav-container">
+            <div class="logo">Campus<span>Pulse</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="btn btn-primary" onclick="triggerDownload()">Get App</button>
+        </div>
     </header>
 
-    <main>
-        <section class="input-section">
-            <h2>Add New Reminder</h2>
-            <input type="text" id="reminderInput" placeholder="Enter your reminder">
-            <input type="date" id="reminderDate">
-            <select id="reminderPriority">
-                <option value="Low">Low Priority</option>
-                <option value="Medium">Medium Priority</option>
-                <option value="High">High Priority</option>
-            </select>
-            <select id="reminderCategory">
-                <option value="Homework">Homework</option>
-                <option value="Exam">Exam</option>
-                <option value="Project">Project</option>
-                <option value="Personal">Personal</option>
-            </select>
-            <button onclick="addReminder()">Add Reminder</button>
-        </section>
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-text">
+                <h1>Stay Ahead of <br>Every Deadline.</h1>
+                <p>The minimalistic campus reminder app. Track assignments, exams, and classes in our signature dark mode or clean white theme.</p>
+                <div class="cta-group">
+                    <button class="btn btn-primary" onclick="triggerDownload()">Download iOS</button>
+                    <button class="btn btn-outline" onclick="triggerDownload()">Download Android</button>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="screen">
+                        <div class="notification">
+                            <span class="time">10:00 AM</span>
+                            <span class="subject">Chemistry 101</span>
+                            <span class="status">Due Today</span>
+                        </div>
+                        <div class="notification">
+                            <span class="time">2:00 PM</span>
+                            <span class="subject">Study Group</span>
+                            <span class="status purple">Upcoming</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section class="reminder-section">
-            <h2>My Reminders</h2>
-            <ul id="reminderList"></ul>
-        </section>
-    </main>
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Why Students Switch</h2>
+            <div class="feature-grid">
+                <div class="card">
+                    <h3>Smart Reminders</h3>
+                    <p>We analyze your syllabus and remind you exactly when you need to start studying.</p>
+                </div>
+                <div class="card">
+                    <h3>Grade Tracking</h3>
+                    <p>Input your scores and watch your GPA calculate automatically in real-time.</p>
+                </div>
+                <div class="card">
+                    <h3>Focus Mode</h3>
+                    <p>Block distractions on your phone during designated study sessions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <p>Student Reminder App &copy; 2025</p>
+        <div class="container">
+            <p>&copy; 2024 CampusPulse. All rights reserved.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>

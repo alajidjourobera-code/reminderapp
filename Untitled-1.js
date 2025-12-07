@@ -1,67 +1,24 @@
-let reminders = []; // Temporary memory
-
-const reminderList = document.getElementById('reminderList');
-
-function displayReminders() {
-    reminderList.innerHTML = '';
-    reminders.forEach((reminder, index) => {
-        const li = document.createElement('li');
-
-        const infoDiv = document.createElement('div');
-        infoDiv.className = 'reminder-info';
-        infoDiv.innerHTML = `<strong>${reminder.text}</strong> <span class="${reminder.priority}">${reminder.priority}</span>`;
-        li.appendChild(infoDiv);
-
-        const details = document.createElement('div');
-        details.innerHTML = `📅 ${reminder.date} | 🏷️ ${reminder.category}`;
-        li.appendChild(details);
-
-        const editBtn = document.createElement('button');
-        editBtn.textContent = "Edit";
-        editBtn.className = "edit-btn";
-        editBtn.onclick = () => editReminder(index);
-        li.appendChild(editBtn);
-
-        const removeBtn = document.createElement('button');
-        removeBtn.textContent = "Remove";
-        removeBtn.className = "remove-btn";
-        removeBtn.onclick = () => removeReminder(index);
-        li.appendChild(removeBtn);
-
-        reminderList.appendChild(li);
-    });
-}
-
-function addReminder() {
-    const text = document.getElementById('reminderInput').value.trim();
-    const date = document.getElementById('reminderDate').value;
-    const priority = document.getElementById('reminderPriority').value;
-    const category = document.getElementById('reminderCategory').value;
-
-    if (!text || !date) {
-        alert("Please enter both reminder text and date!");
-        return;
+// Function 1: Sticky Header Effect
+// When the user scrolls down 50px, add a shadow to the header
+window.addEventListener('scroll', function() {
+    const header = document.getElementById('navbar');
+    
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
     }
+});
 
-    reminders.push({ text, date, priority, category });
-    displayReminders();
-
-    document.getElementById('reminderInput').value = '';
-    document.getElementById('reminderDate').value = '';
-}
-
-function editReminder(index) {
-    const newText = prompt("Edit your reminder:", reminders[index].text);
-    if (newText) {
-        reminders[index].text = newText;
-        displayReminders();
+// Function 2: Download Button Interaction
+function triggerDownload() {
+    // In a real app, this would link to the App Store
+    const isConfirmed = confirm("This would take you to the App Store. Ready to boost your productivity?");
+    
+    if (isConfirmed) {
+        alert("Redirecting to download...");
     }
 }
 
-function removeReminder(index) {
-    reminders.splice(index, 1);
-    displayReminders();
-}
-
-// Initialize
-displayReminders();
+// Function 3: Console message for developers
+console.log("CampusPulse Website Loaded Successfully");
