@@ -3,81 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CampusPulse - Reminder App</title>
-    
-    <link rel="stylesheet" href="style.css">
+    <title>CampusPulse Reminder App</title>
+    <style>
+        /* --- 1. THEME SETTINGS --- */
+        :root {
+            --primary: #8A2BE2;    /* Vibrant Purple */
+            --dark: #000000;       /* Pure Black */
+            --light: #ffffff;      /* Pure White */
+            --gray: #f5f5f5;       /* Light Gray for sections */
+        }
+
+        /* --- 2. BASIC SETUP --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: sans-serif; }
+        body { background-color: var(--light); color: var(--dark); line-height: 1.6; }
+        a { text-decoration: none; }
+        
+        /* --- 3. COMPONENT STYLES --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .btn-purple { background-color: var(--primary); color: var(--light); }
+        .btn-purple:hover { opacity: 0.9; transform: translateY(-2px); }
+        .btn-black { background-color: var(--dark); color: var(--light); }
+
+        /* --- 4. HEADER --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .logo { font-size: 1.5rem; font-weight: 800; color: var(--dark); }
+        .logo span { color: var(--primary); }
+        
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav a { color: var(--dark); font-weight: 500; }
+
+        /* --- 5. HERO SECTION --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 0;
+            min-height: 80vh;
+        }
+        .hero-text { flex: 1; padding-right: 50px; }
+        .hero-text h1 { font-size: 3.5rem; line-height: 1.2; margin-bottom: 20px; color: var(--dark); }
+        .hero-text h1 span { color: var(--primary); }
+        .hero-text p { font-size: 1.2rem; color: #555; margin-bottom: 30px; }
+        
+        /* CSS Phone Mockup */
+        .hero-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        .phone {
+            width: 280px;
+            height: 550px;
+            background: var(--dark);
+            border-radius: 40px;
+            padding: 10px;
+            box-shadow: 20px 20px 0px var(--primary); /* Graphic Shadow */
+        }
+        .screen {
+            background: var(--light);
+            width: 100%;
+            height: 100%;
+            border-radius: 30px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .reminder-card {
+            background: var(--gray);
+            border-left: 5px solid var(--primary);
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 10px;
+            text-align: left;
+            border-radius: 5px;
+        }
+
+        /* --- 6. FOOTER --- */
+        footer {
+            background-color: var(--dark);
+            color: var(--light);
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column; text-align: center; }
+            .hero-text { padding-right: 0; margin-bottom: 50px; }
+            nav { display: none; } /* Hidden on small mobile for simplicity */
+        }
+    </style>
 </head>
 <body>
 
-    <header id="navbar">
-        <div class="container nav-container">
-            <div class="logo">Campus<span>Pulse</span></div>
+    <div class="container">
+        <header>
+            <div class="logo">Campus<span>Mind</span></div>
             <nav>
-                <ul class="nav-links">
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#testimonials">Reviews</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <button class="btn btn-primary" onclick="triggerDownload()">Get App</button>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container hero-container">
-            <div class="hero-text">
-                <h1>Stay Ahead of <br>Every Deadline.</h1>
-                <p>The minimalistic campus reminder app. Track assignments, exams, and classes in our signature dark mode or clean white theme.</p>
-                <div class="cta-group">
-                    <button class="btn btn-primary" onclick="triggerDownload()">Download iOS</button>
-                    <button class="btn btn-outline" onclick="triggerDownload()">Download Android</button>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="phone-mockup">
-                    <div class="screen">
-                        <div class="notification">
-                            <span class="time">10:00 AM</span>
-                            <span class="subject">Chemistry 101</span>
-                            <span class="status">Due Today</span>
-                        </div>
-                        <div class="notification">
-                            <span class="time">2:00 PM</span>
-                            <span class="subject">Study Group</span>
-                            <span class="status purple">Upcoming</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="features" class="features">
-        <div class="container">
-            <h2>Why Students Switch</h2>
-            <div class="feature-grid">
-                <div class="card">
-                    <h3>Smart Reminders</h3>
-                    <p>We analyze your syllabus and remind you exactly when you need to start studying.</p>
-                </div>
-                <div class="card">
-                    <h3>Grade Tracking</h3>
-                    <p>Input your scores and watch your GPA calculate automatically in real-time.</p>
-                </div>
-                <div class="card">
-                    <h3>Focus Mode</h3>
-                    <p>Block distractions on your phone during designated study sessions.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 CampusPulse. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
-</body>
-</html>
+                <ul>
+                    <li><a href="#">Features</a></li>
